@@ -1,6 +1,9 @@
 
 import React from 'react';
 import { Page, PhilosophyItem } from '../types';
+import portrait from "../src/assets/VictoriaPiano.PNG";
+import React from 'react';
+
 
 const Home: React.FC = () => {
   const philosophy: PhilosophyItem[] = [
@@ -47,8 +50,8 @@ const Home: React.FC = () => {
           <div className="absolute inset-0 bg-primary/20 blur-3xl rounded-full opacity-30 group-hover:opacity-50 transition-opacity"></div>
           <div className="relative w-full aspect-[4/5] bg-cover bg-center rounded-xl shadow-2xl border border-white/10 overflow-hidden">
             <img 
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQvJHy6KB5RL__NGuGF0CRzw-ScEKRCGb929PP78DjLnrN6WYyosUTRq9_8gho8t10_HssBXZRprMlC-sapGdtOILe78pLohS7AsHRFwKA5dxYVjjttrgN4IbFYGT25W7h8Q25wSB-WrdbTkY16DKK49EzOgPH3IUSMV1OhlDe18L23_FjWl-NxZZQJ3dxrzTq47vUs2eh_IQk3pUlvhHxiL4IW32XFyQLQROipish0tpkUUFmLbR-4TiT3ovTdW1mBYaoypCWdgA"
-              alt="Grand piano keys"
+              src={portrait}
+              alt="Victoria Piano"
               className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
             />
           </div>
