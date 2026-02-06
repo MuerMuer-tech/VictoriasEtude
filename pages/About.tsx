@@ -1,10 +1,10 @@
 
 import React from 'react';
 import { Milestone } from '../types';
+import portrait from "../src/assets/Victoria.jpg";
 
 const About: React.FC = () => {
   // Use a direct string path for the image asset to avoid ESM resolution errors in the browser.
-  const portrait = 'assets/Victoria.jpg';
 
   const milestones: Milestone[] = [
     {
