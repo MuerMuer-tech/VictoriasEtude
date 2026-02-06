@@ -1,7 +1,34 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 
 const Booking: React.FC = () => {
+  const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+
+async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  e.preventDefault();
+  setStatus('submitting');
+
+  const form = e.currentTarget;
+  const data = new FormData(form);
+
+  try {
+    const res = await fetch("https://formspree.io/f/mnjbqqdw", {
+      method: "POST",
+      body: data,
+      headers: { Accept: "application/json" },
+    });
+
+    if (res.ok) {
+      setStatus('success');
+      form.reset();
+    } else {
+      setStatus('error');
+    }
+  } catch {
+    setStatus('error');
+  }
+}
+
   return (
     <div className="animate-in fade-in zoom-in-95 duration-700 px-6 lg:px-40 py-12 lg:py-20">
       <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16">
@@ -14,23 +41,28 @@ const Booking: React.FC = () => {
             </p>
           </div>
           
-          <form className="flex flex-col gap-6" onSubmit={(e) => { e.preventDefault(); alert("Inquiry sent successfully!"); }}>
+          <form onSubmit={handleSubmit}
+            className="flex flex-col gap-6">
+            <input
+              type="hidden"
+              name="_subject"
+              value="New Trial Lesson Request — Victoria’s Etude"/>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <label className="flex flex-col gap-2">
                 <span className="text-sm font-semibold uppercase tracking-wider text-primary">Full Name</span>
-                <input className="w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="Wolfgang Mozart" type="text" required />
+                <input name="fullName" className="w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="Wolfgang Mozart" type="text" required />
               </label>
               <label className="flex flex-col gap-2">
                 <span className="text-sm font-semibold uppercase tracking-wider text-primary">Email Address</span>
-                <input className="w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="email@example.com" type="email" required />
+                <input name="email" className="w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="email@example.com" type="email" required />
               </label>
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <label className="flex flex-col gap-2">
                 <span className="text-sm font-semibold uppercase tracking-wider text-primary">Student Age</span>
-                <select className="w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all">
-                  <option disabled selected value="">Select age group</option>
+                <select name="studentAge" defaultValue="" className="w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" required>
+                  <option value="" disabled>Select age group</option>
                   <option value="child">Child (5-12)</option>
                   <option value="teen">Teenager (13-17)</option>
                   <option value="adult">Adult (18+)</option>
@@ -38,8 +70,8 @@ const Booking: React.FC = () => {
               </label>
               <label className="flex flex-col gap-2">
                 <span className="text-sm font-semibold uppercase tracking-wider text-primary">Experience Level</span>
-                <select className="w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all">
-                  <option disabled selected value="">Select level</option>
+                <select name="experienceLevel" defaultValue="" className="w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" required>
+                  <option value="" disabled>Select level</option>
                   <option value="beginner">Beginner (No experience)</option>
                   <option value="intermediate">Intermediate (1-3 years)</option>
                   <option value="advanced">Advanced (4+ years)</option>
@@ -51,12 +83,12 @@ const Booking: React.FC = () => {
               <span className="text-sm font-semibold uppercase tracking-wider text-primary">Lesson Format</span>
               <div className="flex flex-wrap gap-4">
                 <label className="flex-1 flex items-center justify-center gap-3 cursor-pointer rounded-lg border border-white/10 p-4 hover:border-primary transition-all has-[:checked]:border-primary has-[:checked]:bg-primary/10">
-                  <input className="hidden" name="format" type="radio" value="in-person" defaultChecked />
+                  <input className="hidden" type="radio" name="lessonFormat" value="in-person" defaultChecked />
                   <span className="material-symbols-outlined text-primary">location_on</span>
                   <span className="font-medium">In-Person</span>
                 </label>
                 <label className="flex-1 flex items-center justify-center gap-3 cursor-pointer rounded-lg border border-white/10 p-4 hover:border-primary transition-all has-[:checked]:border-primary has-[:checked]:bg-primary/10">
-                  <input className="hidden" name="format" type="radio" value="online" />
+                  <input className="hidden" type="radio" name="lessonFormat" value="online" />
                   <span className="material-symbols-outlined text-primary">videocam</span>
                   <span className="font-medium">Online</span>
                 </label>
@@ -65,12 +97,28 @@ const Booking: React.FC = () => {
 
             <label className="flex flex-col gap-2">
               <span className="text-sm font-semibold uppercase tracking-wider text-primary">General Availability</span>
-              <textarea className="w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all resize-none" placeholder="Tell us your preferred days and times..." rows={3}></textarea>
+              <textarea name="availability" className="w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all resize-none" placeholder="Tell us your preferred days and times..." rows={3}></textarea>
             </label>
 
-            <button className="mt-4 w-full md:w-max flex items-center justify-center rounded-lg h-14 px-10 bg-primary text-background-dark text-lg font-bold transition-all hover:scale-[1.02] active:scale-95 shadow-lg shadow-primary/20" type="submit">
-              Request a Trial Lesson
-            </button>
+            <button
+  className="mt-4 w-full md:w-max flex items-center justify-center rounded-lg h-14 px-10 bg-primary text-background-dark text-lg font-bold transition-all hover:scale-[1.02] active:scale-95 shadow-lg shadow-primary/20 disabled:opacity-60 disabled:hover:scale-100"
+  type="submit"
+  disabled={status === 'submitting'}
+>
+  {status === 'submitting' ? 'Sending...' : 'Request a Trial Lesson'}
+</button>
+
+            {status === 'success' && (
+  <div className="mt-3 rounded-lg border border-green-500/30 bg-green-500/10 px-4 py-3 text-sm text-green-200">
+    Thanks! Your request has been sent. Victoria will reach out within 24 hours.
+  </div>
+)}
+
+{status === 'error' && (
+  <div className="mt-3 rounded-lg border border-red-500/30 bg-red-500/10 px-4 py-3 text-sm text-red-200">
+    Oops—something went wrong. Please try again.
+  </div>
+)}
           </form>
         </div>
 
