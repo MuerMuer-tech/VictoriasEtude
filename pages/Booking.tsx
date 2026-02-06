@@ -140,7 +140,7 @@ async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
             <div className="p-6 flex flex-col gap-3">
               <h3 className="text-lg font-bold">Studio Location</h3>
               <p className="text-slate-400 text-sm leading-relaxed">
-                Our private conservatory is located in the heart of Shrewsbury, providing a quiet and inspiring environment for dedicated study.
+                Our private home studio is located in the heart of Shrewsbury, providing a quiet and inspiring environment for dedicated study.
               </p>
               <div className="flex items-center gap-2 text-primary">
                 <span className="material-symbols-outlined text-sm">directions_car</span>
