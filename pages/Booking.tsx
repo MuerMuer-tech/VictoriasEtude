@@ -1,5 +1,7 @@
 
 import React, { useState } from 'react';
+import mapImage from "../src/assets/map.png";
+
 
 const Booking: React.FC = () => {
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
@@ -132,7 +134,7 @@ async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
                 <p className="text-sm font-medium">Studio located in Shrewsbury, MA</p>
               </div>
               <img 
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAA_EAxfbcDgR1EOBfCUrw5xbaiLv4ZgmOr9WK6wOzuEcwZZ7Xr9sODb7zERNe-tW5ghZGIUUNDam-N9CDCg-WMyKAU9XcaKLo1wpqNIdfL-mjq4yKnMXY9fZuBTu9pXa9GqDuM8XP62yCAzdyJgWHKknMy-JrkV_8A002mwGsTR8kNJ5FyBuZopjQ1vBumPS6GcN_-QXkX0vYhvDKGhYGeftAW1Wx3KnV5fN2jmhEWKSiY9cI0RO6l3Hh3CQe6Qt2p6RhXnqiRxa8"
+                src={mapImage}
                 alt="Map"
                 className="absolute inset-0 w-full h-full object-cover opacity-10"
               />
