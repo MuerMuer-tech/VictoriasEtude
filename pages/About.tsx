@@ -66,6 +66,7 @@ const About: React.FC = () => {
               <span className="text-primary uppercase tracking-[0.2em] text-xs font-bold mb-4 block">Maestra</span>
               <h1 className="text-white text-5xl lg:text-6xl font-bold leading-tight tracking-tight mb-6">About Victoria</h1>
               <p className="text-slate-400 text-lg leading-relaxed">
+                 (TEST 0205)
                 With over 20 years of dedication to music and a specialized Master's degree in Music Education, Victoria brings a unique blend of performance excellence and pedagogical expertise to her students in Shrewsbury.
               </p>
             </div>
