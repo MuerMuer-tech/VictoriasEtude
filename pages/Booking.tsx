@@ -110,7 +110,7 @@ async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
 
             {status === 'success' && (
   <div className="mt-3 rounded-lg border border-green-500/30 bg-green-500/10 px-4 py-3 text-sm text-green-200">
-    Thanks! Your request has been sent. Victoria will reach out within 24 hours.
+    Thanks! Your request has been sent. Victoria will reach out within 48 hours.
   </div>
 )}
 
@@ -156,7 +156,7 @@ async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
             <div className="flex flex-col gap-1">
               <h3 className="font-bold">Concierge Response</h3>
               <p className="text-sm text-slate-400">
-                Victoria personally reviews all requests. Expect a curated response within 24 hours to finalize your trial time.
+                Victoria personally reviews all requests. Expect a curated response within 48 hours to finalize your trial time.
               </p>
             </div>
           </div>
