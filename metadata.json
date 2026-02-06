@@ -1,0 +1,8 @@
+{
+  "name": "Victoria's Etude Piano Studio",
+  "description": "A high-end, elegant SPA for a private piano studio in Shrewsbury, MA, featuring multi-page navigation, enrollment forms, and a curriculum showcase.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
