@@ -22,7 +22,7 @@ const Lessons: React.FC = () => {
       title: 'Exam & Advanced Study',
       image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuD6znwl2m9-W9ioIT1oLdLqUNSaQa1EP3S7-e4ai0VfoLeLJ4y5_r_xAQ0RuRmT_EN06v_8AIC3ZQt0sIftT-TBz2OCFvCfhfEsw5urUPFDq8f9_WkBqCmZ1k3teGAJ7Zpa_1QRaCm_HAKoHpqi1UDyRoDlfqQGFtOHshu6qmjrvfMQBmzCTriWhnzOH1l-kBDyf4VvUHQCYNFUzweUOJDGTU6gWmNB51G2A1FN-L3hIkzMC8W6dVtcbGBDCM1W3ce5umHb8RS64MM',
       description: 'Rigorous preparation for ABRSM exams, conservatory auditions, and international competitions.',
-      features: ['Intensive RCM/ABRSM training', 'Artistic interpretation & nuance', 'Audition repertoire coaching']
+      features: ['Intensive ABRSM training', 'Artistic interpretation & nuance', 'Audition repertoire coaching']
     }
   ];
 
