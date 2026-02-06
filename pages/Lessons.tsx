@@ -1,6 +1,9 @@
 
 import React, { useState } from 'react';
 import { CurriculumCard, Page } from '../types';
+import kidsImg from "../src/assets/pianokid.jpg";
+import adultsImg from "../src/assets/pianoadult.jpg";
+import examImg from "../src/assets/pianoexam.jpg";
 
 const Lessons: React.FC = () => {
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
@@ -8,19 +11,19 @@ const Lessons: React.FC = () => {
   const programs: CurriculumCard[] = [
     {
       title: 'Children & Teens',
-      image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBVwZu3zf9udy3ZaPtxPHtFo27-BxYvU3V-iuBaFKFcoOcZANuXeYHb-6actnMlkSTSBTCAxV4OWJmLofrFHtYcL84zpQ0uz5oRQ1cDOyhbYAlwwBkePeqeycELTiJHpWPZzCSUSEXjQXXFI-sgfnniO805LQG7ORBcqm4QZk1IeYPvTuM8VeB0rBqH4qQ9-k07uUMd4rCPxagcqtOQlr35O4yEVv2EFhuoDXxBFvJV5dcGbUPHk_sdcpe9LOLDElI6TRv5GAVPglk',
+      image: kidsImg,
       description: 'A holistic approach focusing on musical literacy, technique, and creative expression for ages 5-18.',
       features: ['Foundational Theory & Sight-reading', 'Performance confidence workshops', 'Introductory Classical Repertoire']
     },
     {
       title: 'Adult Piano Lessons',
-      image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDqYlEiRWcpEOsRcmkZqCbMcomHqJ5NT89i7qcVfPpyqq-h4IeU16pgrc9VI7dyYYzoeSZ0L9apKWwLMBt32iHXWn3rPh3OrIdbiFkgAaHSLZAsSrRl1KBOZnOs_iSaeq0oy8KhLBFsLm8tW5ulgy2xIh6yEGdwWGC_irU0c7wIBnc7drC6U-QEGLTxb33BH5AvAGZchl5O87oFHOdqgz2V75JelCL6KqwL9Oqr7dPlpyF2SkSOMf7cwJ_O9XFzBkDCLF7efUueSi0',
+      image: adultsImg,
       description: 'Customized programs for professionals and hobbyists looking to return to music or start a new journey.',
       features: ['Flexible scheduling for professionals', 'Genre-fluid: Classical to Jazz/Pop', 'Ergonomic technique & tension relief']
     },
     {
       title: 'Exam & Advanced Study',
-      image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuD6znwl2m9-W9ioIT1oLdLqUNSaQa1EP3S7-e4ai0VfoLeLJ4y5_r_xAQ0RuRmT_EN06v_8AIC3ZQt0sIftT-TBz2OCFvCfhfEsw5urUPFDq8f9_WkBqCmZ1k3teGAJ7Zpa_1QRaCm_HAKoHpqi1UDyRoDlfqQGFtOHshu6qmjrvfMQBmzCTriWhnzOH1l-kBDyf4VvUHQCYNFUzweUOJDGTU6gWmNB51G2A1FN-L3hIkzMC8W6dVtcbGBDCM1W3ce5umHb8RS64MM',
+      image: examImg,
       description: 'Rigorous preparation for ABRSM exams, conservatory auditions, and international competitions.',
       features: ['Intensive ABRSM training', 'Artistic interpretation & nuance', 'Audition repertoire coaching']
     }
