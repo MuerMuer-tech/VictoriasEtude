@@ -4,6 +4,7 @@ import { CurriculumCard, Page } from '../types';
 import kidsImg from "../src/assets/pianokid.jpg";
 import adultsImg from "../src/assets/pianoadult.jpg";
 import examImg from "../src/assets/pianoexam.jpg";
+import clpImage from '../src/assets/clp930.jpg';
 
 const Lessons: React.FC = () => {
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
@@ -73,7 +74,43 @@ const Lessons: React.FC = () => {
           ))}
         </div>
       </section>
+      
+{/* Studio Instrument Section */}
+<section className="py-24 border-b border-white/10">
+  <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+    
+    {/* Text Content */}
+    <div>
+      <h2 className="text-3xl font-bold mb-6 flex items-center gap-3">
+        <span className="text-primary text-2xl">🎹</span>
+        Studio Instrument
+      </h2>
 
+      <p className="text-white/80 leading-relaxed mb-4">
+        All lessons are conducted on a <span className="text-primary font-medium">Yamaha Clavinova CLP-930</span>, part of Yamaha’s premium Clavinova series.
+      </p>
+
+      <p className="text-white/70 leading-relaxed mb-4">
+        Designed to faithfully replicate the touch, response, and tonal depth of a concert grand, the CLP-930 features weighted hammer-action keys and advanced digital sound modeling.
+      </p>
+
+      <p className="text-white/70 leading-relaxed">
+        This instrument allows students to develop refined technique, dynamic control, and expressive sensitivity while benefiting from the consistency and versatility of a modern studio environment.
+      </p>
+    </div>
+
+    {/* Image */}
+    <div className="rounded-xl overflow-hidden border border-white/10 shadow-xl">
+<img
+  src={clpImage}
+  alt="Yamaha Clavinova CLP-930"
+  className="w-full h-full object-cover"
+/>
+    </div>
+
+  </div>
+</section>
+      
       {/* Scheduling & Tuition */}
       <section className="max-w-7xl mx-auto px-6 lg:px-20 py-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
