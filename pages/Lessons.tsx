@@ -51,7 +51,7 @@ const Lessons: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
           {programs.map((p, idx) => (
             <div key={idx} className="gold-border-gradient rounded-xl p-8 flex flex-col h-full bg-background-dark group hover:-translate-y-2 transition-transform duration-300">
-              <div className="mb-6 h-48 w-full rounded-lg overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-500">
+              <div className="mb-6 h-48 w-full rounded-lg overflow-hidden brightness-90 group-hover:brightness-100 transition-all duration-500">
                 <img src={p.image} alt={p.title} className="w-full h-full object-cover" />
               </div>
               <h3 className="text-2xl font-bold mb-4">{p.title}</h3>
