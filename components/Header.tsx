@@ -40,19 +40,19 @@ const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
         </div>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-8">
-          {navItems.map((item) => (
-            <button
-              key={item.page}
-              onClick={() => handleNavigate(item.page)}
-              className={`text-sm font-medium transition-colors hover:text-primary ${
-                currentPage === item.page ? 'text-primary' : 'text-white/70'
-              }`}
-            >
-              {item.label}
-            </button>
-          ))}
-        </nav>
+    <nav className="hidden md:flex items-center gap-8">
+  {navItems.map((item) => (
+    <button
+      key={item.page}
+      onClick={() => handleNavigate(item.page)}
+      className={`text-sm font-medium transition-colors hover:text-primary ${
+        currentPage === item.page ? 'text-primary' : 'text-white/70'
+      }`}
+    >
+      {item.label}
+    </button>
+  ))}
+</nav>
 
         <div className="flex items-center gap-3">
           {/* Mobile Hamburger */}
