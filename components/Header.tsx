@@ -18,7 +18,7 @@ const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
 
   const handleNavigate = (page: Page) => {
     onNavigate(page);
-    setMobileOpen(false); 
+    setMobileOpen(false);
   };
 
   return (
@@ -34,25 +34,29 @@ const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
             </svg>
           </div>
           <div className="flex flex-col">
-            <span className="text-xl font-bold tracking-tight uppercase tracking-widest leading-none">Victoria’s Etude</span>
-            <span className="text-[10px] text-primary uppercase tracking-[0.2em]">Shrewsbury, MA</span>
+            <span className="text-xl font-bold tracking-tight uppercase tracking-widest leading-none">
+              Victoria’s Etude
+            </span>
+            <span className="text-[10px] text-primary uppercase tracking-[0.2em]">
+              Shrewsbury, MA
+            </span>
           </div>
         </div>
 
         {/* Desktop Nav */}
-    <nav className="hidden md:flex items-center gap-8">
-  {navItems.map((item) => (
-    <button
-      key={item.page}
-      onClick={() => handleNavigate(item.page)}
-      className={`text-sm font-medium transition-colors hover:text-primary ${
-        currentPage === item.page ? 'text-primary' : 'text-white/70'
-      }`}
-    >
-      {item.label}
-    </button>
-  ))}
-</nav>
+        <nav className="hidden md:flex items-center gap-8">
+          {navItems.map((item) => (
+            <button
+              key={item.page}
+              onClick={() => handleNavigate(item.page)}
+              className={`text-sm font-medium transition-colors hover:text-primary ${
+                currentPage === item.page ? 'text-primary' : 'text-white/70'
+              }`}
+            >
+              {item.label}
+            </button>
+          ))}
+        </nav>
 
         <div className="flex items-center gap-3">
           {/* Mobile Hamburger */}
@@ -63,7 +67,6 @@ const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
             aria-expanded={mobileOpen}
             onClick={() => setMobileOpen((v) => !v)}
           >
-            {/* 简单三横线图标 */}
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
               <path d="M4 7H20" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
               <path d="M4 12H20" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
@@ -95,7 +98,7 @@ const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
               >
                 {item.label}
               </button>
-            )}
+            ))}
           </div>
         </div>
       )}
