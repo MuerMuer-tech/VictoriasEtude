@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { CurriculumCard, Page } from '../types';
 import kidsImg from "../src/assets/pianokid.jpg";
 import adultsImg from "../src/assets/pianoadult.jpg";
-import examImg from "../src/assets/pianoexam1.jpg";
+import examImg from "../src/assets/pianoexam2.jpg";
 import clpImage from '../src/assets/clp930.jpg';
 
 const Lessons: React.FC = () => {
